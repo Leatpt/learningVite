@@ -1,28 +1,18 @@
-import { useState } from "react";
-import Alert from "./components/Alert";
-import Button from "./components/Button";
-import ListGroup from "./components/ListGroup";
-import NavBar from "./components/navigation/Nav";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import avaleht from "./pages/avaleht";
+import kontakt from "./pages/kontakt";
+import meist from "./pages/meist";
 
 function App() {
-  const [alertVisible, setAlertVisibility] = useState(false);
-  let menuOptions = ["Avaleht", "Meist", "Kontakt"];
-
   return (
     <div>
-      <NavBar />
-      {alertVisible && (
-        <Alert onClose={() => setAlertVisibility(false)}>
-          {" "}
-          Failid on otsas{" "}
-        </Alert>
-      )}
-      <Button color="danger" onClick={() => setAlertVisibility(false)}>
-        Eelmine
-      </Button>
-      <Button color="danger" onClick={() => setAlertVisibility(true)}>
-        Järgmine
-      </Button>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" index element={avaleht()} />
+          <Route path="/kontakt" element={kontakt()} />
+          <Route path="/meist" element={meist()} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
