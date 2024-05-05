@@ -1,0 +1,13 @@
+
+.menuItems {
+  height: .5;
+  padding: 1rem;
+  text-decoration: none;
+  color: #fad53f; 
+}
+.menuItems:hover {
+  height: .5;
+  padding: 1rem;
+  color: #7bdb83; 
+}
+
